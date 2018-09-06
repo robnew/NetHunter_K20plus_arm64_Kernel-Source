@@ -1,0 +1,285 @@
+&mdss_mdp {
+	dsi_lgd_td4310_fhd_incell_vid: qcom,mdss_dsi_lgd_incell_td4310_fhd_video{
+		compatible = "qcom,mdss-dsi-panel";
+		status = "disable";
+		qcom,cont-splash-enabled;
+		qcom,mdss-dsi-panel-name = "LGD INCELL TD4310 FHD video mode dsi panel";
+		qcom,mdss-dsi-panel-controller = <&mdss_dsi0>;
+		qcom,mdss-dsi-panel-type = "dsi_video_mode";
+		qcom,mdss-dsi-panel-destination = "display_1";
+		qcom,mdss-dsi-panel-framerate = <60>;
+		//qcom,mdss-dsi-force-clock-lane-hs;
+		qcom,mdss-dsi-virtual-channel-id = <0>;
+		qcom,mdss-dsi-stream = <0>;
+		qcom,mdss-dsi-lp11-init;
+		qcom,suspend-ulps-enabled;
+		qcom,mdss-dsi-panel-width = <1080>;
+		qcom,mdss-dsi-panel-height = <1920>;
+		qcom,mdss-dsi-h-front-porch = <104>;
+		qcom,mdss-dsi-h-back-porch = <116>;
+		qcom,mdss-dsi-h-pulse-width = <4>;
+		qcom,mdss-dsi-h-sync-skew = <0>;
+		qcom,mdss-dsi-v-front-porch = <4>;
+		qcom,mdss-dsi-v-back-porch = <31>;
+		qcom,mdss-dsi-v-pulse-width = <4>;
+		qcom,mdss-dsi-h-left-border = <0>;
+		qcom,mdss-dsi-h-right-border = <0>;
+		qcom,mdss-dsi-v-top-border = <0>;
+		qcom,mdss-dsi-v-bottom-border = <0>;
+		qcom,mdss-pan-physical-width-dimension = <71>;
+		qcom,mdss-pan-physical-height-dimension = <126>;
+		qcom,mdss-dsi-bpp = <24>;
+		qcom,mdss-dsi-color-order = "rgb_swap_rgb";
+		qcom,mdss-dsi-underflow-color = <0>;
+		qcom,mdss-dsi-border-color = <0>;
+		qcom,mdss-dsi-on-command = [
+			/* MCAP : all Access OK */
+			29 01 00 00 00 00 02
+			B0 00
+
+			/* Interface Setting */
+			29 01 00 00 00 00 04
+			B3 31 00 06
+
+			/* Interface ID Setting */
+			29 01 00 00 00 00 02
+			B4 00
+
+			/* DSI Control */
+			29 01 00 00 00 00 06
+			B6 33 5B 81 12 00
+
+			/* Backlight Control 1 UI Mode */
+			29 01 00 00 00 00 08
+			B8 57 3D 19 1E 0A 50 50
+
+			/* Backlight Control 2 Still Mode */
+			29 01 00 00 00 00 08
+			B9 6F 3D 28 3C 14 C8 C8
+
+			/* Backlight Control 1 Movie Mode */
+			29 01 00 00 00 00 08
+			BA B5 33 41 64 23 A0 A0
+
+			/* SRE - Weak */
+			29 01 00 00 00 00 03
+			BB 14 14
+
+			/* SRE- Middle */
+			29 01 00 00 00 00 03
+			BC 37 32
+
+			/* SRE- Strong */
+			29 01 00 00 00 00 03
+			BD 64 32
+
+			/* External Clock Setting */
+			29 01 00 00 00 00 02
+			BE 04
+
+			/* Skew Rate Adjustment */
+			29 01 00 00 00 00 02
+			C0 00
+
+			/* Display Setting 1 Common */
+			29 01 00 00 00 00 31
+			C1 0C 48 10 FF 98 47 A7 8C 77 D9 EF 1A FB FF FF FF 59 73 FF AF 2B 06 29 C0 9C 0F 10 10 10 10 10 10 10 10 40 02 62 02 06 05 84 00 01 00 01 00 00 00
+
+			/* Display Setting 2 */
+			29 01 00 00 00 00 19
+			C2 01 F7 80 12 68 08 0C 10 00 08 30 00 00 00 00 00 00 00 00 08 00 00 00 00
+
+			/* Display Setting 3 */
+			29 01 00 00 00 00 3F
+			C3 78 77 87 78 70 00 00 00 00 00 3B 63 B6 00 00 3F C3 FC 00 00 01 01 03 28 00 01 00 01 00 00 15 00 15 00 2C 01 15 00 15 00 2C 01 15 00 15 00 2C 01 2C 00 2C 00 5A 02 00 00 00 00 00 00 40 00
+
+			/* Source Timing Setting & SOUT Equalize Setting */
+			29 01 00 00 00 00 15
+			C4 70 00 00 00 00 00 00 00 10 02 02 31 01 00 00 00 02 01 01 01
+
+			/* Crosshair */
+			29 01 00 00 00 00 09
+			C5 08 00 00 00 00 70 00 00
+
+			/* LTPS Timing Setting */
+			29 01 00 00 00 00 40
+			C6 46 01 40 02 3E 01 0E 01 02 01 02 00 00 00 00 00 00 04 10 04 47 00 8E 61 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+			/* Gamma Setting Common Set */
+			29 01 00 00 00 00 27
+			C7 00 22 32 44 53 5D 73 81 8D 97 48 52 5F 72 7A 85 90 95 97 00 22 32 44 53 5D 73 81 8D 97 48 52 5F 72 7A 85 90 95 97
+
+			/* Digital Gamma Setting 1 */
+			29 01 00 00 00 00 38
+			C8 13 00 FF FC FD BE 00 00 FE FE FD 88 00 00 FC 01 FF 30 00 00 FF FC FD FE 00 00 FE FE FD 9C 00 00 FC 01 FF 54 00 00 FF FC FD FE 00 00 FE FE FD 9C 00 00 FC 01 FF 54 00
+
+			/* Digital Gamma Setting 2 */
+			29 01 00 00 00 00 14
+			C9 00 00 01 02 FE FC 00 00 01 01 FD FC 00 00 02 02 FD FC 00
+
+			/* Color Enhancement */
+			29 01 00 00 00 00 2C
+			CA 1D FC F4 FC 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+			/* Panel PIN Control */
+			29 01 00 00 00 00 1C
+			CB FE 77 E0 FC 07 00 00 00 00 00 00 00 00 0D 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+			/* Panel Interface Control */
+			29 01 00 00 00 00 03
+			CC 20 00
+
+			/* Touch Control */
+			29 01 00 00 00 00 27
+			CD 1D 00 22 00 22 00 5C 02 AE AE A0 A0 A0 A0 A0 A0 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 A2
+
+			/* Blacklight Control 4 */
+			29 01 00 00 00 00 1A
+			CE 5D 40 49 53 59 5E 63 68 6E 74 7E 8A 98 A8 BB D0 FF 04 00 04 04 42 00 69 5A
+
+			/* Panel Synchronous Output */
+			29 01 00 00 00 00 03
+			CF 4A 1D
+
+			/* Power Setting For CHGP */
+			29 01 00 00 00 00 14
+			D0 33 59 D9 31 01 10 10 10 19 19 00 00 00 00 00 00 00 6D 65
+
+			/* Touch Period & SDM Select */
+			29 01 00 00 00 00 02
+			D1 00
+
+			/* Power Setting for Internal Power */
+			29 01 00 00 00 00 16
+			D3 1B 3B BB 77 77 77 BB B3 33 00 00 6E 6E DB DB 33 BB F2 FD C6 0B
+
+			/* Timing Control For Power On Sequencer Test Mode */
+			29 01 00 00 00 00 22
+			D7 F6 FF 03 05 41 24 80 1F C7 1F 1B 00 0C 07 20 00 00 00 00 00 0C F0 07 00 0C 00 00 78 00 7E 5D 06 00
+
+			/* Power Sequencer Test Mode */
+			29 01 00 00 00 00 08
+			D9 00 02 14 3F 0F 77 02
+
+			/* Outline Sharpening Control */
+			29 01 00 00 00 00 05
+			DD 30 06 23 65
+
+			/* Test Image Generator */
+			29 01 00 00 00 00 05
+			DE 00 3F FF 50
+
+			/* Test Register */
+			29 01 00 00 00 00 04
+			FB 00 00 00
+
+			/* Sequencer Test Control */
+			29 01 00 00 00 00 02
+			D6 01
+
+			/* MCAP : Lock */
+			29 01 00 00 00 00 02
+			B0 03
+
+			/* TE on */
+			15 01 00 00 0A 00 02
+			35 00
+
+			/* Sleep out */
+			05 01 00 00 78 00 01
+			11
+
+			/* Display On */
+			05 01 00 00 00 00 01
+			29
+		];
+
+		qcom,mdss-dsi-off-command = [
+			05 01 00 00 14 00 01 /* Display Off */
+			28
+			05 01 00 00 78 00 01 /* Sleep In */
+			10
+		];
+
+		qcom,panel-reader-mode-step1-command = [
+			/* Paper mode : low */
+			15 01 00 00 00 00 02
+			85 8C
+		];
+		qcom,panel-reader-mode-step2-command = [
+			/* Paper mode : medium */
+			15 01 00 00 00 00 02
+			85 3C
+		];
+		qcom,panel-reader-mode-step3-command = [
+			/* Paper mode : high */
+			15 01 00 00 00 00 02
+			85 15
+		];
+		qcom,panel-reader-mode-off-command = [
+			/* Paper mode : off */
+			15 01 00 00 00 00 02
+			85 FF
+		];
+
+		qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
+		qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
+		qcom,mdss-dsi-reader-mode-command-state = "dsi_hs_mode";
+		qcom,mdss-dsi-h-sync-pulse = <0>;
+		qcom,mdss-dsi-traffic-mode = "non_burst_sync_event";
+		qcom,mdss-dsi-lane-map = "lane_map_0123";
+		qcom,mdss-dsi-bllp-eof-power-mode;
+		qcom,mdss-dsi-bllp-power-mode;
+		qcom,mdss-dsi-lane-0-state;
+		qcom,mdss-dsi-lane-1-state;
+		qcom,mdss-dsi-lane-2-state;
+		qcom,mdss-dsi-lane-3-state;
+		qcom,mdss-dsi-tx-eot-append;
+
+		qcom,mdss-dsi-panel-timings = [F3 3A 26 00 6A 6E 2C 3E 2F 03 04 00];
+		qcom,mdss-dsi-t-clk-post = <0x02>;
+		qcom,mdss-dsi-t-clk-pre = <0x2D>;
+
+		//The following feature "none" and "trigger_sw" are the same in video mode.
+		//The feature used any option of TE signal in command mode.
+		qcom,mdss-dsi-dma-trigger = "trigger_sw";	//default "trigger_sw"
+		qcom,mdss-dsi-mdp-trigger = "trigger_sw";	//default "trigger_sw"
+
+		qcom,mdss-dsi-bl-min-level = <1>;
+		qcom,mdss-dsi-bl-max-level = <255>;
+		qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_wled";
+		qcom,mdss-dsi-reset-sequence = <0 10>, <1 130>;
+
+		lge,blmap-size = <256>;
+		lge,blmap = <
+			0	25	25	25	25	25	25	25	25	25		/* 0 ~ 9 */
+			25	26	26	27	27	28	28	29	30	30		/* 10 ~ 19 */
+			31	31	32	33	33	34	34	35	35	36		/* 20 ~ 29 */
+			37	37	38	38	39	39	40	43	46	49		/* 30 ~ 39 */
+			52	55	58	61	64	67	70	73	76	78		/* 40 ~ 49 */
+			81	84	87	90	93	96	99	102	105	108		/* 50 ~ 59 */
+			111	116	122	127	133	138	143	149	154	159		/* 60 ~ 69 */
+			165	170	176	181	186	192	197	202	208	213		/* 70 ~ 79 */
+			219	224	229	235	240	248	255	263	270	278		/* 80 ~ 89 */
+			285	293	300	308	315	323	330	338	346	353		/* 90 ~ 99 */
+			361	368	376	383	391	398	406	413	421	428		/* 100 ~ 109 */
+			436	447	458	468	479	490	501	511	522	533		/* 110 ~ 119 */
+			544	554	565	576	587	597	608	619	630	640		/* 120 ~ 129 */
+			651	662	673	683	694	708	723	737	751	765		/* 130 ~ 139 */
+			780	794	808	823	837	851	866	880	894	908		/* 140 ~ 149 */
+			923	937	951	966	980	994	1008	1023	1037	1054		/* 150 ~ 159 */
+			1070	1087	1104	1120	1137	1154	1170	1187	1204	1220		/* 160 ~ 169 */
+			1237	1256	1275	1294	1313	1332	1351	1369	1388	1407		/* 170 ~ 179 */
+			1426	1445	1464	1485	1507	1528	1549	1571	1592	1613		/* 180 ~ 189 */
+			1635	1656	1677	1699	1720	1741	1763	1784	1805	1827		/* 190 ~ 199 */
+			1848	1869	1891	1912	1933	1955	1976	1999	2023	2046		/* 200 ~ 209 */
+			2069	2092	2116	2139	2162	2185	2209	2232	2255	2279		/* 210 ~ 219 */
+			2302	2325	2348	2372	2395	2418	2441	2465	2488	2511		/* 220 ~ 229 */
+			2534	2558	2581	2610	2639	2669	2698	2727	2756	2786		/* 230 ~ 239 */
+			2815	2844	2873	2902	2932	2961	2990	3019	3048	3078		/* 240 ~ 249 */
+			3107	3136	3165	3195	3224	3253						/* 250 ~ 255 */
+
+		>;
+
+	};
+};
